@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamesCompendium.Views.TicTacToePage"
+             xmlns:vm="clr-namespace:GamesCompendium.ViewModels"
+             xmlns:converters="clr-namespace:GamesCompendium.Converters"
+             Title="Tic Tac Toe">
+    <ContentPage.BindingContext>
+        <vm:TicTacToeViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:PlayerSymbolColourConverter x:Key="symbolColourConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <!-- First Row -->
+            <Button AutomationId="Button1"
+                    x:Name="Button1"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="Large"
+                    TextColor="{Binding Button1Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button1Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button1"
+                    IsEnabled="{Binding Button1Enabled}"/>
+
+            <Button AutomationId="Button2"
+                    x:Name="Button2"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    TextColor="{Binding Button2Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button2Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button2"
+                    IsEnabled="{Binding Button2Enabled}"/>
+            
+            <Button AutomationId="Button3"
+                    x:Name="Button3"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="Large"
+                    TextColor="{Binding Button3Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button3Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button3"
+                    IsEnabled="{Binding Button3Enabled}"/>
+
+            <!-- Second Row -->
+            <Button AutomationId="Button4"
+                    x:Name="Button4"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="Large"
+                    TextColor="{Binding Button4Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button4Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button4"
+                    IsEnabled="{Binding Button4Enabled}"/>
+            
+            <Button AutomationId="Button5"
+                    x:Name="Button5"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    TextColor="{Binding Button5Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button5Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button5"
+                    IsEnabled="{Binding Button5Enabled}"/>
+            
+            <Button AutomationId="Button6"
+                    x:Name="Button6"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="Large"
+                    TextColor="{Binding Button6Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button6Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button6"
+                    IsEnabled="{Binding Button6Enabled}"/>
+            
+            <!-- Third Row -->
+            <Button AutomationId="Button7"
+                    x:Name="Button7"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontSize="Large"
+                    TextColor="{Binding Button7Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button7Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button7"
+                    IsEnabled="{Binding Button7Enabled}"/>
+            
+            <Button AutomationId="Button8"
+                    x:Name="Button8"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    TextColor="{Binding Button8Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button8Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button8"
+                    IsEnabled="{Binding Button8Enabled}"/>
+            
+            <Button AutomationId="Button9"
+                    x:Name="Button9"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    FontSize="Large"
+                    TextColor="{Binding Button9Text, Converter={StaticResource symbolColourConverter}}"
+                    Text="{Binding Button9Text}"
+                    Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                    CommandParameter="Button9"
+                    IsEnabled="{Binding Button9Enabled}"/>
+            
+            <!-- BOTTOM ROW-->
+            <StackLayout Orientation="Vertical"
+                         Grid.Row="3"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3">
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="{Binding CurrentPlayerText}"
+                       TextColor="Black" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="{Binding WinningPlayerMessage}"
+                       IsVisible="{Binding ShowWinningMessage}"
+                       TextColor="Black" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="{Binding DrawMessage}"
+                       IsVisible="{Binding ShowDrawMessage}"
+                       TextColor="Black" />
+
+                <Button BackgroundColor="LightBlue"
+                        TextColor="White"
+                        Text="Reset"
+                        IsVisible="{Binding GameEnded}"
+                        Command="{Binding ResetGameCommand}"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
