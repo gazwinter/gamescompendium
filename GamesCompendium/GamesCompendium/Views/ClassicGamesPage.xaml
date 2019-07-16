@@ -9,9 +9,25 @@
         <vm:ClassicGamesViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout>
-        <Button Command="{Binding LoadGameCommand}" CommandParameter="TicTacToe"
-                Text="Tic Tac Toe" />
-    </StackLayout>
+    <FlexLayout FlowDirection="LeftToRight"
+                Direction="Column"
+                AlignContent="Start">
+        <Frame BorderColor="Black"
+               Margin="50">
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Center">
+
+                <ImageButton Source="tictactoe.png"
+                             Command="{Binding LoadGameCommand}"
+                             CommandParameter="TicTacToe"
+                             BackgroundColor="White"
+                             Scale="1" />
+                <Label Text="Tic Tac Toe"
+                       HorizontalOptions="Center"
+                       FontSize="Large"
+                       VerticalOptions="Start" />
+            </StackLayout>
+        </Frame>
+    </FlexLayout>
     
 </ContentPage>

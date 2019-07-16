@@ -12,13 +12,14 @@ namespace GamesCompendium
         {
             InitializeComponent();
             Routing.RegisterRoute("TicTacToe", typeof(TicTacToePage));
-            //Routing.RegisterRoute("BlackJack", typeof(BlackJackPage));
+            Routing.RegisterRoute("Blackjack", typeof(BlackjackPage));
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             Routing.UnRegisterRoute("TicTacToe");
+            Routing.UnRegisterRoute("Blackjack");
         }
     }
 }

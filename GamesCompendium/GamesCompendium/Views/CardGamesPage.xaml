@@ -10,7 +10,9 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <Label Text="Card games go here!" />
+        <Button Text="Blackjack"
+                Command="{Binding LoadGameCommand}"
+                CommandParameter="Blackjack" />
     </StackLayout>
     
 </ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamesCompendium.Views.BlackjackPage"
+             xmlns:vm="clr-namespace:GamesCompendium.ViewModels"
+             Title="Blackjack">
+    <ContentPage.BindingContext>
+        <vm:BlackjackViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Players Hand Value: " />
+                <Label Text="{Binding PlayersHandValue}" />               
+            </StackLayout>
+            <!--<StackLayout Orientation="Horizontal">
+                <Image Source="{Binding DealersHand[0].ImageName}" />
+                <Image Source="{Binding DealersHand[1].ImageName}" />
+            </StackLayout>-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Dealers Hand Value: " />
+                <Label Text="{Binding DealersHandValue}" />
+            </StackLayout>
+
+            <!--<StackLayout Orientation="Horizontal">
+                <Image Source="{Binding PlayersHand[0].ImageName}" />
+                <Image Source="{Binding PlayersHand[1].ImageName}" />
+            </StackLayout>-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
