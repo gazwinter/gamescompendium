@@ -45,7 +45,7 @@ namespace GamesCompendium.Models
             {
                 foreach(var rank in Enum.GetValues(typeof(CardRank)))
                 {
-                    var cardImage = String.Concat("cards/",rank.ToString(), suit.ToString(), ".png");
+                    var cardImage = String.Concat(rank.ToString(), suit.ToString(), ".png");
                     Cards[card] = new Card((CardRank)rank, (CardSuit)suit, cardImage);
                     card++;
                 }
